@@ -1,10 +1,11 @@
-/**
- *this scrip prints a string using puts
- */
 #include<stdio.h>
+/**
+*main - Entry point
+*Description: 'this program print a string
+*Return: returns 0
+*/
 int main(void)
-/* this progarm prints a string using puts fuction*/
 {
-	puts("Programming is like building a multilingual puzzle ");
-	return(0);/* return zero*/
+puts("\"Programming is like building a multilingual puzzle");
+return (0);
 }
