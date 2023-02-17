@@ -1,13 +1,12 @@
-#include<stdio.h>
 /**
  *this scrip prints a string using puts
  */
-
-int main (void)
+#include<stdio.h>
+int main(void)
        /* this progarm prints a string using puts fuction*/	
 {
-	puts ("Programming is like building a multilingual puzzle ");
+	puts("Programming is like building a multilingual puzzle ");
 	
 	/* return zero*/
-	return (0);
+	return(0);
 }
