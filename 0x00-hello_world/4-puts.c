@@ -3,8 +3,11 @@
  *this scrip prints a string using puts
  */
 
-int main(void)
+int main (voiid)
+       /* this progarm prints a string using puts fuction*/	
 {
-	puts("Programming is like building a multilingual puzzle ");
-	return(0);
+	puts ("Programming is like building a multilingual puzzle ");
+	
+	/* return zero*/
+	return (0);
 }
