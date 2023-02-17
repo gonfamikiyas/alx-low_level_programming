@@ -1,3 +1,2 @@
 #!/bin/bash
-gcc $CFILE -o out | ./out > c 
-
+gcc $CFILE -o out | ./out > c
