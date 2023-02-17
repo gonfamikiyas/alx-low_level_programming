@@ -1,7 +1,11 @@
 #include<stdio.h>
 
-int main(void){
-printf("hwere we go \n");
-
-return (0);
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+    return (0);
 }
