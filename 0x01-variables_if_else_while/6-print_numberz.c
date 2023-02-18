@@ -7,13 +7,11 @@
 */
 int main(void)
 {
-	char l[] = "0123456789";
-	int i = 0;
+	int l;
 
-	while (l[i] != '\0')
+	for (l = 0; l < 10; l++)
 	{
-		putchar(l[i]);
-		i++;
+		putchar(48 + l);
 	}
 	putchar('\n');
 	return (0);
