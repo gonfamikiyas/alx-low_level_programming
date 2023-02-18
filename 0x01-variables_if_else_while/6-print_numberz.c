@@ -7,14 +7,12 @@
 */
 int main(void)
 {
-	char s[20];
-	int l = 123456789;
+	char l[] = "0123456789";
 	int i = 0;
-	
-	sprintf(s, "%d", l);
-	while (s[i] != '\0')
+
+	while (l[i] != '\0')
 	{
-		putchar(s[i]);
+		putchar(l[i]);
 		i++;
 	}
 	putchar('\n');
