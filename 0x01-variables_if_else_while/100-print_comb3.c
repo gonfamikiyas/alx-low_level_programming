@@ -1,25 +1,24 @@
-#include <stdlib.h>
 #include <stdio.h>
-#include <time.h>
 /**
-*main - Entery point
-*Return: return 0 if run succesfully
-*/
+ * main - Entery point of the program
+ * Return: return zero
+ */
+
 int main(void)
 {
-	int l, m;
+	int i, j;
 
-	for (l = 0; l < 10; l++)
+	for (i = 0; i <= 8; i++)
 	{
-		for (m = 0; m < 10; m++)
+		for (j = i + 1; j <= 9; j++)
 		{
-			putchar((l % 10) + '0');
-			putchar((m % 10) + '0');
-
-			if (l == 9 && m == 9)
-				continue;
+			putchar(i + '0');
+			putchar(j + '0');
+		if (i != 8 || j != 9)
+		{
 			putchar(',');
 			putchar(' ');
+		}
 		}
 	}
 	putchar('\n');
