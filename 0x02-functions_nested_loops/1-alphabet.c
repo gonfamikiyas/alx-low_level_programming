@@ -6,7 +6,7 @@
 *main - Entery point
 *Return: return 0 if run succesfully
 */
-int main(void)
+void print_alphabet(void)
 {
 	char l = 'a';
 
@@ -16,5 +16,4 @@ int main(void)
 		l++;
 	}
 	putchar('\n');
-	return (0);
 }
