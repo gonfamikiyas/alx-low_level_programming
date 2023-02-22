@@ -15,6 +15,10 @@ void jack_bauer(void)
 		l = 0;
 		while (l <= 9)
 		{
+			if (x == 2 &&  l == 4)
+			{
+				break;
+			}	
 			m = 0;
 			while (m <= 5)
 			{
