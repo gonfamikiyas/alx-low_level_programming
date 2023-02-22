@@ -3,7 +3,7 @@
 #include <time.h>
 #include "main.h"
 /**
-*main - Entery point
+*print_alphabet - Entery point
 *Return: return 0 if run succesfully
 */
 void print_alphabet(void)
