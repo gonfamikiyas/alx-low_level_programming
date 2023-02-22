@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <time.h>
 #include "main.h"
 /**
 *print_alphabet_x10 - Entery point
@@ -8,7 +7,7 @@
 */
 void print_alphabet_x10(void)
 {
-	char l = 'a';
+	char l;
 	int x = 0;
 
 	while (x <= 10)
