@@ -4,7 +4,7 @@
 #include "main.h"
 /**
  *print_line - Entery point
- *@c int
+ *@c: int
  *@d int
  *Return: return 0 if run succesfully
  */
