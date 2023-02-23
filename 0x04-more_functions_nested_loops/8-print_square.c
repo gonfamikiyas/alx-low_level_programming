@@ -13,12 +13,12 @@ void print_square(int c)
 {
 	int d, f;
 
-	for (d = 0; d < c; d++)
+	if (c <= 0)
 	{
-		if (c <= 0)
-		{
-			continue;
-		} else
+		_putchar('\n');
+	} else
+	{
+		for (d = 0; d < c; d++)
 		{
 			for (f = 0; f < c; f++)
 			{
