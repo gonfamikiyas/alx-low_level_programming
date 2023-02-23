@@ -15,7 +15,8 @@ void print_most_numbers(void)
 		if (c == 50 || c == 52)
 		{
 			continue;
-		} else {
+		} else
+		{
 			_putchar(c);
 		}
 	}
