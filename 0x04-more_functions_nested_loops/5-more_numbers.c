@@ -15,16 +15,21 @@ void more_numbers(void)
 
 	for (d = 0; d < 10; d++)
 	{
-		for (c = 48; c < 58; c++)
+		for (c = 48; c < 63; c++)
 		{
-			_putchar(c);
-		}
-		_putchar(49);
-		_putchar(48);
-		for (f = 48; f < 52; f++)
-		{
-			_putchar(49);
-			_putchar(f + 1);
+			if (c < 58)
+			{
+				f = c;
+			} else
+			{
+				f = 49;
+			}
+			_putchar(f);
+
+			if (c > 57)
+			{
+				_putchar(c - 10);
+			}
 		}
 	_putchar('\n');
 	}
