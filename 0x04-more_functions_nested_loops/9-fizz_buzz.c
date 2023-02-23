@@ -14,18 +14,18 @@ int main(void)
 	{
 		if (d % 3 == 0 && d % 5 == 0)
 		{
-			printf("FizzBuzz");
+			printf("FizzBuzz ");
 		} else if (d % 3 == 0)
 		{
-			printf("Fizz");
+			printf("Fizz ");
 		} else if (d % 5 == 0)
 		{
-			printf("Buzz");
+			printf("Buzz ");
 		} else
 		{
-			printf("%d", d);
+			printf("%d ", d);
 		}
-		printf("\n");
 	}
+	printf("\n");
 	return (0);
 }
