@@ -21,7 +21,7 @@ void more_numbers(void)
 		}
 		_putchar(49);
 		_putchar(48);
-		for (f = 48; f < 53; f++)
+		for (f = 48; f < 52; f++)
 		{
 			_putchar(49);
 			_putchar(f + 1);
