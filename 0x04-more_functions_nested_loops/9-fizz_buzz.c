@@ -18,6 +18,9 @@ int main(void)
 		} else if (d % 3 == 0)
 		{
 			printf("Fizz ");
+		} else if (d == 100)
+		{
+			printf("Buzz");
 		} else if (d % 5 == 0)
 		{
 			printf("Buzz ");
