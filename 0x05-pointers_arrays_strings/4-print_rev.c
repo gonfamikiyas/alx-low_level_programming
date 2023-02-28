@@ -4,19 +4,18 @@
 /**
 *print_rev - check the code
 *@s: int
-*@c - int
+*@i - int
 *@d - int
 *Return: Always 0.
 */
 void print_rev(char *s)
 {
 	int d = strlen(s);
-	int c = 0;
+	int i;
 
-	while (c < d)
+	for (i = d - 1; i >= 0; i--)
 	{
-		_putchar(s[d - c]);
-		c++;
+		_putchar(s[i]);
 	}
 	_putchar('\n');
 }
