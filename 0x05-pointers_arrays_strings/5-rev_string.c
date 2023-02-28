@@ -2,21 +2,23 @@
 #include <string.h>
 #include <stdio.h>
 /**
-*print_rev - check the code
+*rev_string - check the code
 *@s: int
 *@c - int
 *@d - int
 *Return: Always 0.
 */
-void print_rev(char *s)
+void rev_string(char *s)
 {
 	int d = strlen(s);
 	int c = d;
+	int g;
 
-	while (c > -1)
+
+	while (c >= 0)
 	{
-		_putchar(s[c]);
+		g = d - c;
+		*(s + g) = s[c];
 		c--;
 	}
-	_putchar('\n');
 }
