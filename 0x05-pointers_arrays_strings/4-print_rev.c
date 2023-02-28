@@ -13,7 +13,7 @@ void print_rev(char *s)
 	int d = strlen(s);
 	int c = 0;
 
-	while (c <= d)
+	while (c < d)
 	{
 		_putchar(s[d - c]);
 		c++;
