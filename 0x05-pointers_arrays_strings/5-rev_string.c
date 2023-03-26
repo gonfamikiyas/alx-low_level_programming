@@ -4,21 +4,27 @@
 /**
 *rev_string - check the code
 *@s: int
-*@c - int
 *@d - int
+*@temp - char
+*@i - int
 *Return: Always 0.
 */
 void rev_string(char *s)
 {
 	int d = strlen(s);
-	int c = d;
-	int g;
+	int i;
+	char temp[11];
 
-
-	while (c >= 0)
+	for (i = 0; i <= d; i++)
 	{
-		g = d - c;
-		*(s + g) = s[c];
-		c--;
+		temp[i] = s[i];
+	}
+
+	for (i = 0; i <= d; i++)
+	{
+		if (s[d - i] != 0)
+		{
+		s[i - 1] = temp[d - i];
+		}
 	}
 }
