@@ -28,15 +28,16 @@ int sqrt_(int i, int n)
 }
 /**
  * _sqrt_recursion - return value
- * @n: int
+ * @p: int
  * @c - int
- * Returns: Always 0.
+ * @i - int
+ * Return: Always 0.
  */
-int _sqrt_recursion(int n)
+int _sqrt_recursion(int p)
 {
 	int i = 0;
 	int c;
 
-	c = sqrt_(i, n);
+	c = sqrt_(i, p);
 	return (c);
 }
