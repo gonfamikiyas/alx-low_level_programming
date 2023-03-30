@@ -3,12 +3,12 @@
 #include <string.h>
 #include <stdio.h>
 /**
- *sqrt - return the value
+ *sqrt_ - return the value
  *@n: int
  *@i: int
  *Return: Always 0.
  */
-int sqrt(int i, int n)
+int sqrt_(int i, int n)
 {
 
 	if (i >  n)
@@ -24,7 +24,7 @@ int sqrt(int i, int n)
 		return (i);
 	}
 	i++;
-	return (sqrt(i, n));
+	return (sqrt_(i, n));
 }
 /**
  * _sqrt_recursion - return value
@@ -37,6 +37,6 @@ int _sqrt_recursion(int n)
 	int i = 0;
 	int c;
 
-	c = sqrt(i, n);
+	c = sqrt_(i, n);
 	return (c);
 }
