@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
 #include "main.h"
 /**
@@ -10,13 +9,9 @@
  */
 int main(int argc, char **argv)
 {
-	char i;
-
-	i = strlen(*argv);
-	i
-	       	(argc != i)
+	while (argc--)
 	{
-		printf("%d\n", argc - 1);
+		printf("%s\n", *argv++);
 	}
 	exit(EXIT_SUCCESS);
 }
