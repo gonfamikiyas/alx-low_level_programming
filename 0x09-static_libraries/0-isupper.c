@@ -1,19 +1,18 @@
-#include <stdlib.h>
+#include "main.h"
+
 #include <stdio.h>
+
+#include <stdlib.h>
+
 #include <ctype.h>
-/**
- *_isupper - Entery point
- *@c: string
- *Return: return 0 if run succesfully
- */
+
+#include <string.h>
+
+
 int _isupper(int c)
+
 {
-	if (islower(c))
-	{
-		return (0);
-	}
-	else
-	{
-		return (1);
-	}
+
+    return (c >= 'A' && c <= 'Z');
+
 }
