@@ -3,12 +3,12 @@
 #include <ctype.h>
 /**
  *_islower - Entery point
- *@s: string
+ *@c: string
  *Return: return 0 if run succesfully
  */
-int _islower(char s)
+int _islower(int c)
 {
-	if (islower(s))
+	if (islower(c))
 	{
 		return (1);
 	}
