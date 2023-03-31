@@ -7,17 +7,19 @@
  *@argv: char
  *@d - int
  *@c - int
+ *@i - int
  *Return: value
  */
 int main(int argc, char **argv)
 {
-	int c, d;
+	int i, c, d;
 
 	if (argc == 3)
 	{
 		d = atoi(*(argv + 2));
 		c = atoi(*(argv + 1));
-		printf("%d\n", c * d);
+		i = c * d;
+		printf("%d\n", i);
 	}
 	else
 	{
