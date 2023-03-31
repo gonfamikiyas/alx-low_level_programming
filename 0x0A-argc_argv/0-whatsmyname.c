@@ -5,7 +5,7 @@
  * main - return value
  *@argc: int
  *@argv: char
- *Return - value
+ *Return: value
  */
 int main(int argc, char **argv)
 {
