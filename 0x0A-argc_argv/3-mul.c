@@ -20,11 +20,11 @@ int main(int argc, char **argv)
 		c = atoi(*(argv + 1));
 		i = c * d;
 		printf("%d\n", i);
-		return (0);
 	}
 	else
 	{
 		printf("Error \n");
 		return (1);
 	}
+	exit(EXIT_SUCCESS);
 }
