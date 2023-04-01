@@ -13,8 +13,7 @@ int main(int argc, char **argv)
 	char i;
 
 	i = strlen(*argv);
-	i
-	       	(argc != i)
+	if (i > 1)
 	{
 		printf("%d\n", argc - 1);
 	}
