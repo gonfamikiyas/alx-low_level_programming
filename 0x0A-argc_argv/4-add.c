@@ -26,17 +26,20 @@ int main(int argc, char **argv)
 			{
 				if (!(isdigit(argv[i][j])))
 				{
-					printf("Error\n");
+					printf("Error");
+					printf("\n");
 					return (1);
 				}
 			}
 		d = d + atoi(*(argv + i));
 		}
-		printf("%d \n", d);
+		printf("%d", d);
+		printf("\n");
 	}
 	else if (argc <= 1)
 	{
-		printf("%d \n", 0);
+		printf("%d", 0);
+		printf("\n");
 	}
 	return (0);
 }
