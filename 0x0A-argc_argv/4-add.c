@@ -15,7 +15,7 @@
 int main(int argc, char **argv)
 {
 	int i, d;
-	long unsigned int j;
+	unsigned long int j;
 
 	if (argc > 1)
 	{
@@ -34,10 +34,9 @@ int main(int argc, char **argv)
 		}
 		printf("%d \n", d);
 	}
-	else if(argc <= 1)
+	else if (argc <= 1)
 	{
 		printf("%d \n", 0);
 	}
 	return (0);
-	exit(EXIT_SUCCESS);
 }
