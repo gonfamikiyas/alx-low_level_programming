@@ -1,27 +1,45 @@
-#include "main.h"
 #include <stdlib.h>
+#include "main.h"
+
 /**
-*create_array - create array of size size and assign char c
-* @size: size of array
-* @c: char to assign
-* Description: creat array of size size and assign char c
-* Return: pointer to array, NULL if fail
-*
-*/
-
-char *create_array(unsigned int size, char c)
+ * alloc_grid - Creates a two dimensional array of integers.
+ * @width: The width of the matrix.
+ * @height: The height of the matrix.
+ *
+ * Return: On success - Pointer to the created matrix.
+ *         On failure - NULL.
+ */
+int **alloc_grid(int width, int height)
 {
-	char *str;
-	unsigned int i;
+	int **array;
+	int i, j;
 
-	str = malloc(sizeof(char) * size);
-	if (size == 0 || str == NULL)
-	{
+	if (height <= 0 || width <= 0)
 		return (NULL);
-	}
-	for (i = 0; i < size; i++)
+
+	array = (int **)malloc(sizeof(int *) * height);
+
+	if (array == NULL)
+		return (NULL);
+
+	for (i = 0; i < height; i++)
 	{
-		str[i] = c;
-		return (str);
+		array[i] = (int *)malloc(sizeof(int) * width);
+		if (array[i] == NULL)
+		{
+			for (j = 0; j < i; j++)
+				free(array[j]);
+			free(array);
+			return (NULL);
+		}
 	}
+
+	for (i = 0; i < height; i++)
+	{
+		for (j = 0; j < width; j++)
+		{
+			array[i][j] = 0;
+		}
+	}
+	return (array);
 }
