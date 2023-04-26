@@ -185,8 +185,8 @@ void print_elf_abi(unsigned char *elf_ident)
 }
 
 /**
- * print_elf_type - Prints the header
- * @elf_type: ELF type 
+ * print_elf_type - Prints the heade
+ * @elf_type: ELF type
  * @elf_ident: A pointer
  */
 void print_elf_type(unsigned int elf_type, unsigned char *elf_ident)
@@ -258,7 +258,7 @@ void close_elf_file(int elf_fd)
 
 /**
  * main - Displays the information contained in the header
- * @argc: The number of arguments 
+ * @argc: The number of arguments
  * @argv: An array of pointers
  * Return: 0 on success.
  * Description: If the file is not an ELF File or
