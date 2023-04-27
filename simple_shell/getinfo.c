@@ -2,7 +2,9 @@
 
 /**
  * clear_info - initializes info_t struct
- * @info: struct address
+ * @info: pointer to the info_t struct
+ *
+ * This function clears all fields in the info_t struct.
  */
 void clear_info(info_t *info)
 {
@@ -14,8 +16,11 @@ void clear_info(info_t *info)
 
 /**
  * set_info - initializes info_t struct
- * @info: struct address
+ * @info: pointer to the info_t struct
  * @av: argument vector
+ *
+ * This function sets the fields in the info_t struct based on the input arguments.
+ * It also replaces any aliases or variables in the input arguments.
  */
 void set_info(info_t *info, char **av)
 {
@@ -45,15 +50,17 @@ void set_info(info_t *info, char **av)
 
 /**
  * free_info - frees info_t struct fields
- * @info: struct address
- * @free_all: true if freeing all fields
+ * @info: pointer to the info_t struct
+ * @all: flag to free all fields
+ *
+ * This function frees the specified fields in the info_t struct.
  */
-void free_info(info_t *info, int free_all)
+void free_info(info_t *info, int all)
 {
 	ffree(info->argv);
 	info->argv = NULL;
 	info->path = NULL;
-	if (free_all)
+	if (all)
 	{
 		if (!info->cmd_buf)
 			free(info->arg);
@@ -64,7 +71,7 @@ void free_info(info_t *info, int free_all)
 		if (info->alias)
 			free_list(&(info->alias));
 		ffree(info->environ);
-			info->environ = NULL;
+		info->environ = NULL;
 		bfree((void **)info->cmd_buf);
 		if (info->readfd > 2)
 			close(info->readfd);

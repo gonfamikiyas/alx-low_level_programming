@@ -4,7 +4,7 @@
  * get_environ - returns the string array copy of our environ
  * @info: parameter struct
  *
- * Return: Pointer to the environment
+ * Return: a copy of the environment variables
  */
 char **get_environ(info_t *info)
 {
@@ -56,7 +56,7 @@ int _unsetenv(info_t *info, char *var)
  * @var: the string env var property
  * @value: the string env var value
  *
- * Return: Always 0
+ * Return: 0 on success, or 1 on failure
  */
 int _setenv(info_t *info, char *var, char *value)
 {

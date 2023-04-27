@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * get_history_file - returns the history file path
- * @info: parameter struct
+ * get_history_file - Gets the history file path
+ * @info: Parameter struct
  *
- * Return: pointer to allocated string containing history file path
+ * Return: A string containing the path to the history file
  */
 char *get_history_file(info_t *info)
 {
@@ -13,21 +13,24 @@ char *get_history_file(info_t *info)
 	dir = _getenv(info, "HOME=");
 	if (!dir)
 		return (NULL);
+
 	buf = malloc(sizeof(char) * (_strlen(dir) + _strlen(HIST_FILE) + 2));
 	if (!buf)
 		return (NULL);
+
 	buf[0] = 0;
 	_strcpy(buf, dir);
 	_strcat(buf, "/");
 	_strcat(buf, HIST_FILE);
+
 	return (buf);
 }
 
 /**
- * write_history - writes the history to a file
- * @info: the parameter struct
+ * write_history - Writes the shell history to file
+ * @info: Parameter struct
  *
- * Return: 1 on success, else -1
+ * Return: 1 on success, -1 on failure
  */
 int write_history(info_t *info)
 {
@@ -42,6 +45,7 @@ int write_history(info_t *info)
 	free(filename);
 	if (fd == -1)
 		return (-1);
+
 	for (node = info->history; node; node = node->next)
 	{
 		_putsfd(node->str, fd);
@@ -49,14 +53,14 @@ int write_history(info_t *info)
 	}
 	_putfd(BUF_FLUSH, fd);
 	close(fd);
+
 	return (1);
 }
-
 /**
- * read_history - reads history from file
- * @info: the parameter struct
+ * read_history - reads the command history from a file
+ * @info: pointer to the info struct
  *
- * Return: histcount on success, 0 otherwise
+ * Return: the number of history entries on success, 0 otherwise
  */
 int read_history(info_t *info)
 {
@@ -102,12 +106,12 @@ int read_history(info_t *info)
 }
 
 /**
- * build_history_list - adds a new entry to the history linked list
- * @info: struct containing shell information
- * @buf: buffer containing the command to add to the history
- * @linecount: the line number of the command in the history
+ * build_history_list - adds an entry to the command history
+ * @info: pointer to the info struct
+ * @buf: the command string to add to the history
+ * @linecount: the line number of the command in the history file
  *
- * Return: 0 on success, -1 on failure
+ * Return: Always 0
  */
 int build_history_list(info_t *info, char *buf, int linecount)
 {
@@ -123,10 +127,10 @@ int build_history_list(info_t *info, char *buf, int linecount)
 }
 
 /**
- * renumber_history - updates the line numbers of the commands in the history
- * @info: struct containing shell information
+ * renumber_history - renumbers the command history list after changes
+ * @info: pointer to the info struct
  *
- * Return: the new histcount
+ * Return: the new number of history entries
  */
 int renumber_history(info_t *info)
 {
@@ -140,4 +144,3 @@ int renumber_history(info_t *info)
 	}
 	return (info->histcount = i);
 }
-

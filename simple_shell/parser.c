@@ -2,87 +2,83 @@
 
 /**
  * is_cmd - determines if a file is an executable command
- * @info: pointer to info struct
- * @path: path to the file
+ * @info: the information struct
+ * @file_path: path to the file
  *
  * Return: 1 if true, 0 otherwise
  */
-int is_cmd(info_t *info, char *path)
+int is_cmd(info_t *info, char *file_path)
 {
 	struct stat st;
 
 	(void)info;
-	if (!path || stat(path, &st))
+	if (!file_path || stat(file_path, &st))
 		return (0);
 
 	if (st.st_mode & S_IFREG)
+	{
 		return (1);
-
+	}
 	return (0);
 }
 
 /**
- * dup_chars - duplicates characters from path string
- * @pathstr: pointer to the path string
- * @start: starting index
- * @stop: stopping index
+ * dup_chars - duplicates characters
+ * @path_string: the PATH string
+ * @start_idx: starting index
+ * @end_idx: stopping index
  *
  * Return: pointer to new buffer
  */
-char *dup_chars(char *pathstr, int start, int stop)
+char *dup_chars(char *path_string, int start_idx, int end_idx)
 {
-	static char buf[1024];
-	int i, k = 0;
+	static char buffer[1024];
+	int i = 0, j = 0;
 
-	for (i = start; i < stop; i++)
-	{
-		if (pathstr[i] != ':')
-			buf[k++] = pathstr[i];
-	}
-
-	buf[k] = 0;
-	return (buf);
+	for (j = 0, i = start_idx; i < end_idx; i++)
+		if (path_string[i] != ':')
+			buffer[j++] = path_string[i];
+	buffer[j] = 0;
+	return (buffer);
 }
 
 /**
- * find_path - finds the full path of a command in the PATH string
- * @info: pointer to info struct
- * @pathstr: pointer to the PATH string
- * @cmd: pointer to the command to find
+ * find_path - finds this command in the PATH string
+ * @info: the information struct
+ * @path_string: the PATH string
+ * @command: the command to find
  *
- * Return: full path of cmd if found or NULL
+ * Return: full path of command if found or NULL
  */
-char *find_path(info_t *info, char *pathstr, char *cmd)
+char *find_path(info_t *info, char *path_string, char *command)
 {
-	int i = 0, curr_pos = 0;
+	int i = 0, current_position = 0;
 	char *path;
 
-	if (!pathstr)
+	if (!path_string)
 		return (NULL);
-
-	if ((_strlen(cmd) > 2) && starts_with(cmd, "./"))
+	if ((_strlen(command) > 2) && starts_with(command, "./"))
 	{
-		if (is_cmd(info, cmd))
-			return (cmd);
+		if (is_cmd(info, command))
+			return (command);
 	}
-
 	while (1)
 	{
-		if (!pathstr[i] || pathstr[i] == ':')
+		if (!path_string[i] || path_string[i] == ':')
 		{
-			path = dup_chars(pathstr, curr_pos, i);
+			path = dup_chars(path_string, current_position, i);
 			if (!*path)
-				_strcat(path, cmd);
+				_strcat(path, command);
 			else
 			{
 				_strcat(path, "/");
-				_strcat(path, cmd);
+				_strcat(path, command);
 			}
 			if (is_cmd(info, path))
 				return (path);
-			if (!pathstr[i])
+			if (!path_string[i])
 				break;
-			curr_pos = i;
+			current_position = i;
 		}
 		i++;
 	}

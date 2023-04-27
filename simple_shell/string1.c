@@ -63,6 +63,7 @@ void _puts(char *str)
 		i++;
 	}
 }
+
 /**
  * _putchar - writes the character c to stdout
  * @c: The character to print
@@ -84,3 +85,4 @@ int _putchar(char c)
 		buf[i++] = c;
 	return (1);
 }
+
