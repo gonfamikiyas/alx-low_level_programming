@@ -18,10 +18,10 @@ char *_memset(char *s, char b, unsigned int n)
 }
 
 /**
- * free_str_arr - frees an array of strings
+ * ffree - frees an array of strings
  * @arr: pointer to array of strings
  */
-void free_str_arr(char **arr)
+void ffree(char **arr)
 {
 	char **tmp = arr;
 
