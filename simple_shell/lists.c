@@ -115,14 +115,18 @@ int delete_node_at_index(list_t **head, unsigned int index)
 	unsigned int i = 0;
 
 	if (!head || !*head)
+	{
 		return (0);
+	}
 
 	if (!index)
+	{
 		node = *head;
 		*head = (*head)->next;
 		free(node->str);
 		free(node);
 		return (1);
+	}
 
 	node = *head;
 	while (node)
@@ -140,6 +144,7 @@ int delete_node_at_index(list_t **head, unsigned int index)
 	}
 
 	return (0);
+}
 
 /**
  * free_list - Frees all nodes of a list_t linked list

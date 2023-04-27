@@ -15,10 +15,9 @@ ssize_t input_buf(info_t *info, char **buf, size_t *len)
 
 	if (!*len) /* if nothing left in the buffer, fill it */
 	{
-		/*bfree((void **)info->cmd_buf);*/
 		free(*buf);
 		*buf = NULL;
-		signal(SIGINT, sigint_handler);
+		signal(SIGINT, sigintHandler);
 #if USE_GETLINE
 		r = getline(buf, &len_p, stdin);
 #else
@@ -129,7 +128,7 @@ int _getline(info_t *info, char **ptr, size_t *length)
 		line_length = *length;
 	if (buffer_index == buffer_size)
 		buffer_index = buffer_size = 0;
-	bytes_read = read_buffer(info, buffer, &buffer_size);
+	bytes_read = read_buf(info, buffer, &buffer_size);
 	if (bytes_read == -1 || (bytes_read == 0 && buffer_size == 0))
 		return (-1);
 	end_of_line = _strchr(buffer + buffer_index, '\n');
